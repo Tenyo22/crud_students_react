@@ -1,7 +1,7 @@
 const { default: Swal } = require("sweetalert2")
 
 // Evento que cambia la carrera
-module.exports.handleChangeCarrera = (e, setCarrera, opcionesCarrera) => {
+export const handleChangeCarrera = (e, setCarrera, opcionesCarrera) => {
     // setCarrera(event.target.value);
     // Expresion de busqueda, devuelve el objeto de la opcion que coincida con
     // el valor seleccionado por el usuario
@@ -10,7 +10,7 @@ module.exports.handleChangeCarrera = (e, setCarrera, opcionesCarrera) => {
 }
 
 // Verificar que el archivo sea una imagen
-module.exports.handleImageChange = (e, setFoto) => {
+export const handleImageChange = (e, setFoto) => {
     const file = e.target.files[0]
 
     // console.log(file)
@@ -30,7 +30,7 @@ module.exports.handleImageChange = (e, setFoto) => {
 }
 
 
-module.exports.addStudents = (datos, clean, setDisabled, setInfoStudent, infoStudent) => {
+export const addStudents = (datos, clean, setDisabled, setInfoStudent, infoStudent) => {
     // console.log(datos)
     setInfoStudent([...infoStudent, datos])
     clean()
@@ -44,7 +44,7 @@ module.exports.addStudents = (datos, clean, setDisabled, setInfoStudent, infoStu
     })
 }
 
-module.exports.editStudent = (options) => {
+export const editStudent = (options) => {
     // Se obtiene el indice con la bisqueda de la mtricula
     const infoStudentIndex = options.infoStudent.findIndex(student => student.id === options.matricula)
     // console.log(infoStudentIndex)
@@ -80,7 +80,7 @@ module.exports.editStudent = (options) => {
     })
 }
 
-module.exports.handleDelete = (item, setInfoStudent, infoStudent, clean, setDisabled, setEnviar) => {
+export const handleDelete = (item, setInfoStudent, infoStudent, clean, setDisabled, setEnviar) => {
     // console.log(item)
     // const confirmation = window.confirm('Are you sure you want to delete this item?')
     Swal.fire({
